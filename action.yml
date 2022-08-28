@@ -32,7 +32,8 @@ runs:
         token: ${{ inputs.telegram_token }}
         format: html
         message: |
-          <b>🟢Success</b>
+          <b>🟢 Success</b>
+
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
           Repo:     ${{ github.repository }}
@@ -54,7 +55,8 @@ runs:
         token: ${{ inputs.telegram_token }}
         format: html
         message: |
-          <b>🔴Failure</b>
+          <b>🔴 Failure</b>
+
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
           Repo:     ${{ github.repository }}
@@ -76,7 +78,8 @@ runs:
         token: ${{ inputs.telegram_token }}
         format: html
         message: |
-          <b>🟡Cancelled</b>
+          <b>🟡 Cancelled</b>
+
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
           Repo:     ${{ github.repository }}
