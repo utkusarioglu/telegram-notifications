@@ -9,7 +9,7 @@ inputs:
     description: Token for the bot that will be sending the messages
     required: true
   job_status:
-    description: 'job.status' context property from github actions
+    description: job.status context property from github actions
     required: true
   github_context:
     description: github context from calling workflow
