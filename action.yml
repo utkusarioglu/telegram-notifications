@@ -35,7 +35,7 @@ runs:
           <b>🟢Success</b>
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
-          Repo:     ${{ repo }}
+          Repo:     ${{ github.repository }}
           Branch:   ${{ github.ref_name }}
           Owner:    ${{ github.repository_owner }}
           Event:    ${{ github.event_name }}
@@ -57,7 +57,7 @@ runs:
           <b>🔴Failure</b>
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
-          Repo:     ${{ repo }}
+          Repo:     ${{ github.repository }}
           Branch:   ${{ github.ref_name }}
           Owner:    ${{ github.repository_owner }}
           Event:    ${{ github.event_name }}
@@ -79,7 +79,7 @@ runs:
           <b>🟡Cancelled</b>
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
-          Repo:     ${{ repo }}
+          Repo:     ${{ github.repository }}
           Branch:   ${{ github.ref_name }}
           Owner:    ${{ github.repository_owner }}
           Event:    ${{ github.event_name }}
