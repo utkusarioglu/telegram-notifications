@@ -1,6 +1,10 @@
 name: Send Telegram notifications
 description: Sends messages for success, failure, and cancellation of runs
 
+branding:
+  icon: "activity"
+  color: "yellow"
+
 inputs:
   telegram_id:
     description: ID of the recipient of the messages
