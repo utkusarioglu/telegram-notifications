@@ -1,0 +1,88 @@
+name: Send Telegram notifications
+description: Sends messages for success, failure, and cancellation of runs
+
+inputs:
+  telegram_id:
+    description: ID of the recipient of the messages
+    required: true
+  telegram_token:
+    description: Token for the bot that will be sending the messages
+    required: true
+  job_status:
+    description: `job.status` this is provided by github contexts
+    required: true
+  github_context:
+    description: github context from calling workflow
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Send Telegram Success Message
+      if: ${{ inputs.job_status == 'success' }}
+      uses: appleboy/telegram-action@master
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(inputs.github_context) }}
+      with:
+        to: ${{ inputs.telegram_id }}
+        token: ${{ inputs.telegram_token }}
+        format: html
+        message: |
+          <b>Success</b>
+
+          <pre>Job:      ${{ github.job }}
+          Workflow: ${{ github.workflow }}
+          Repo:     ${{ repo }}
+          Branch:   ${{ github.ref_name }}
+          Owner:    ${{ github.repository_owner }}
+          Event:    ${{ github.event_name }}
+          </pre>
+          <pre>Commit Message:
+          ${{ github.event.commits[0].message }}
+          </pre>
+
+    - name: Send Telegram Failure Message
+      if: ${{ inputs.job_status == 'failure' }}
+      uses: appleboy/telegram-action@master
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(inputs.github_context) }}
+      with:
+        to: ${{ inputs.telegram_id }}
+        token: ${{ inputs.telegram_token }}
+        format: html
+        message: |
+          <b>Failure</b>
+
+          <pre>Job:      ${{ github.job }}
+          Workflow: ${{ github.workflow }}
+          Repo:     ${{ repo }}
+          Branch:   ${{ github.ref_name }}
+          Owner:    ${{ github.repository_owner }}
+          Event:    ${{ github.event_name }}
+          </pre>
+          <pre>Commit Message:
+          ${{ github.event.commits[0].message }}
+          </pre>
+
+    - name: Send Telegram Cancelation Message
+      if: ${{ inputs.job_status == 'cancelled' }}
+      uses: appleboy/telegram-action@master
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(inputs.github_context) }}
+      with:
+        to: ${{ inputs.telegram_id }}
+        token: ${{ inputs.telegram_token }}
+        format: html
+        message: |
+          <b>Cancelled</b>
+
+          <pre>Job:      ${{ github.job }}
+          Workflow: ${{ github.workflow }}
+          Repo:     ${{ repo }}
+          Branch:   ${{ github.ref_name }}
+          Owner:    ${{ github.repository_owner }}
+          Event:    ${{ github.event_name }}
+          </pre>
+          <pre>Commit Message:
+          ${{ github.event.commits[0].message }}
+          </pre>
