@@ -37,7 +37,7 @@ runs:
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
           Repo:     ${{ github.repository }}
-          Branch:   ${{ github.ref_name }}
+          Ref:   ${{ github.ref_name }}
           Owner:    ${{ github.repository_owner }}
           Event:    ${{ github.event_name }}
           </pre>
@@ -60,7 +60,7 @@ runs:
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
           Repo:     ${{ github.repository }}
-          Branch:   ${{ github.ref_name }}
+          Ref:   ${{ github.ref_name }}
           Owner:    ${{ github.repository_owner }}
           Event:    ${{ github.event_name }}
           </pre>
@@ -83,7 +83,7 @@ runs:
           <pre>Job:      ${{ github.job }}
           Workflow: ${{ github.workflow }}
           Repo:     ${{ github.repository }}
-          Branch:   ${{ github.ref_name }}
+          Ref:   ${{ github.ref_name }}
           Owner:    ${{ github.repository_owner }}
           Event:    ${{ github.event_name }}
           </pre>
