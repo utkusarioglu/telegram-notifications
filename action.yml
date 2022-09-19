@@ -34,12 +34,12 @@ runs:
         message: |
           <b>🟢 Success</b>
 
-          <pre>Job:      ${{ github.job }}
-          Workflow: ${{ github.workflow }}
-          Repo:     ${{ github.repository }}
+          <pre>Job:   ${{ github.job }}
+          Wf:    ${{ github.workflow }}
+          Repo:  ${{ github.repository }}
           Ref:   ${{ github.ref_name }}
-          Owner:    ${{ github.repository_owner }}
-          Event:    ${{ github.event_name }}
+          Owner: ${{ github.repository_owner }}
+          Event: ${{ github.event_name }}
           </pre>
           <pre>Commit Message:
           ${{ github.event.commits[0].message }}
@@ -57,12 +57,12 @@ runs:
         message: |
           <b>🔴 Failure</b>
 
-          <pre>Job:      ${{ github.job }}
-          Workflow: ${{ github.workflow }}
-          Repo:     ${{ github.repository }}
+          <pre>Job:   ${{ github.job }}
+          Wf:    ${{ github.workflow }}
+          Repo:  ${{ github.repository }}
           Ref:   ${{ github.ref_name }}
-          Owner:    ${{ github.repository_owner }}
-          Event:    ${{ github.event_name }}
+          Owner: ${{ github.repository_owner }}
+          Event: ${{ github.event_name }}
           </pre>
           <pre>Commit Message:
           ${{ github.event.commits[0].message }}
@@ -80,12 +80,12 @@ runs:
         message: |
           <b>🟡 Cancelled</b>
 
-          <pre>Job:      ${{ github.job }}
-          Workflow: ${{ github.workflow }}
-          Repo:     ${{ github.repository }}
+          <pre>Job:   ${{ github.job }}
+          Wf:    ${{ github.workflow }}
+          Repo:  ${{ github.repository }}
           Ref:   ${{ github.ref_name }}
-          Owner:    ${{ github.repository_owner }}
-          Event:    ${{ github.event_name }}
+          Owner: ${{ github.repository_owner }}
+          Event: ${{ github.event_name }}
           </pre>
           <pre>Commit Message:
           ${{ github.event.commits[0].message }}
